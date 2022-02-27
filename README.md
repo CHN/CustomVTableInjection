@@ -8,14 +8,13 @@ using namespace std;
 struct A
 {
     int x = 1;
-  virtual void abc(int b){cout << x * b;}  
+    virtual void abc(int b){cout << x * b;}  
 };
 
 struct B : public A
 {
     int y = 2;
-  virtual void abc(int b){cout << y * b;}  
-
+    virtual void abc(int b){cout << y * b;}  
 };
 
 int main()
