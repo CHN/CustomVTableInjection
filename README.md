@@ -1,4 +1,4 @@
-# CustomVTableInjection
+# Custom VTable Injection
 
 ```cpp
 #include <iostream>
