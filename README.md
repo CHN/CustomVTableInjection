@@ -88,6 +88,12 @@ int main()
     b->print();
     c->print();
     
+    cout << "\nCheck dynamic casts\n";
+    
+    cout << (dynamic_cast<A*>(a) != nullptr) << endl;
+    cout << (dynamic_cast<B*>(b) != nullptr) << endl;
+    cout << (dynamic_cast<C*>(c) != nullptr) << endl;
+    
     return 0;
 }
 ```
