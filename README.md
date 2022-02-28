@@ -19,7 +19,7 @@ struct B : public A
 
 int main()
 {
-    A* t = (A*)malloc(16);
+    void* t = malloc(16);
     *(((int*)t)+3) = 6;
     
     *(void**)t = (void*)new void*();
