@@ -97,7 +97,7 @@ int main()
     return 0;
 }
 ```
-# Create Polymorphic object with VTable reference and inline asm
+# Create Polymorphic object with VTable reference and inline asm (Tested on x86_64 GCC)
 ```cpp
 #include <iostream>
 #include <map>
