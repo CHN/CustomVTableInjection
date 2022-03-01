@@ -157,8 +157,8 @@ int main()
 {
     {
         void* p;
-        GET_VTABLE_LOCATION("A", p);
         
+        GET_VTABLE_LOCATION("A", p);
         vtableMap["A"] = { p, sizeof(A) };
        
         GET_VTABLE_LOCATION("B", p);
