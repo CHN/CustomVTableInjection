@@ -54,18 +54,16 @@ void dummy_vtable_creator()
 
 int main()
 {
-    {
-        void* p;
-        GET_VTABLE_LOCATION("A", p);
+    void* p;
         
-        vtableMap["A"] = { p, sizeof(A) };
-       
-        GET_VTABLE_LOCATION("B", p);
-        vtableMap["B"] = { p, sizeof(B) };
-        
-        GET_VTABLE_LOCATION("C", p);
-        vtableMap["C"] = { p, sizeof(C) };
-    }
+    GET_VTABLE_LOCATION("A", p);
+    vtableMap["A"] = { p, sizeof(A) };
+
+    GET_VTABLE_LOCATION("B", p);
+    vtableMap["B"] = { p, sizeof(B) };
+
+    GET_VTABLE_LOCATION("C", p);
+    vtableMap["C"] = { p, sizeof(C) };
     
     A* a = createByTypeString("A");
     A* b = createByTypeString("B");
