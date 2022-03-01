@@ -141,12 +141,17 @@ A* createByTypeString(const char* name)
     } \
     while(0)
 
+#pragma GCC push_options
+#pragma GCC optimize ("O0")
+
 void dummy_vtable_creator()
 {
     A a;
     B b;
     C c;
 }
+
+#pragma GCC pop_options
 
 int main()
 {
