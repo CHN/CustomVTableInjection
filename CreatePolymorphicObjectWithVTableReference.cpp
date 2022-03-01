@@ -40,6 +40,9 @@ A* createByTypeString(const char* name)
     } \
     while(0)
 
+#pragma GCC push_options
+#pragma GCC optimize ("O0")
+
 void dummy_vtable_creator()
 {
     A a;
@@ -47,18 +50,22 @@ void dummy_vtable_creator()
     C c;
 }
 
+#pragma GCC pop_options
+
 int main()
 {
-    void* p;
-    GET_VTABLE_LOCATION("A", p);
-
-    vtableMap["A"] = { p, sizeof(A) };
-
-    GET_VTABLE_LOCATION("B", p);
-    vtableMap["B"] = { p, sizeof(B) };
-
-    GET_VTABLE_LOCATION("C", p);
-    vtableMap["C"] = { p, sizeof(C) };
+    {
+        void* p;
+        GET_VTABLE_LOCATION("A", p);
+        
+        vtableMap["A"] = { p, sizeof(A) };
+       
+        GET_VTABLE_LOCATION("B", p);
+        vtableMap["B"] = { p, sizeof(B) };
+        
+        GET_VTABLE_LOCATION("C", p);
+        vtableMap["C"] = { p, sizeof(C) };
+    }
     
     A* a = createByTypeString("A");
     A* b = createByTypeString("B");
